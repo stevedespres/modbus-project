@@ -1,7 +1,7 @@
 # ModbusProject
 Modbus communication between Arduino Uno and Raspberry Pi 2 (Ethernet + WIFI)
 
-*****READ ModbusCommunication.pdf TO HAVE THE COMPLETE DESCRIPTION OF THIS PROJECT *****
+*****READ ModbusCommunication.pdf TO HAVE THE FULL DESCRIPTION OF THIS PROJECT *****
 
 
 I'm french student and I worked on this project during an internship. 
