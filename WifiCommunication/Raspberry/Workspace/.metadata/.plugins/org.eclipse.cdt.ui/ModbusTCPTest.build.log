@@ -1,0 +1,7 @@
+13:21:32 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+
+13:21:33 Build Finished (took 719ms)
+

@@ -1,0 +1,12 @@
+LaunchTargetManager/configs/ModbusTCPTest\ Default=org.eclipse.launchbar.core.launchTargetType.local\:Local
+LaunchTargetManager/configs/RPi2Test01\ -\ RPi2-Dev03=org.eclipse.launchbar.core.launchTargetType.local\:Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:RPi2Test01 - RPi2-Dev03,org.eclipse.launchbar.core.descriptorType.default\:ModbusTCPTest Default
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:ModbusTCPTest\ Default/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:ModbusTCPTest\ Default/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:RPi2Test01\ -\ RPi2-Dev03/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:RPi2Test01\ -\ RPi2-Dev03/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:RPi2Test01\ Default/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:RPi2Test01\ Default/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

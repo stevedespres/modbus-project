@@ -1,0 +1,275 @@
+/*============================================================================*/
+/* FICHERO     : RPi2Test01.cpp                                               */
+/* COMETIDO    : Programa Principal del test para prueba de programacion RPi2 */
+/* VERSIONES   : V1.00 - Inicio = 12-01-2017 - Final = 12-01-2017 - Fede Pérez*/
+/* COMENTARIOS : V1.00 - Versión inicial                                      */
+/*============================================================================*/
+/*============================================================================*/
+/* Ficheros de cabeceras                                                      */
+/*============================================================================*/
+
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <modbus.h>
+
+
+enum {
+    TCP,
+    TCP_PI,
+    RTU
+};
+
+
+
+
+/*============================================================================*/
+/* Macros y definiciones                                                      */
+/*============================================================================*/
+
+#define RPI2TEST01_NO_ERROR        0
+#define RPI2TEST01_ERROR           -1
+
+
+const uint16_t UT_BITS_ADDRESS = 0x13;
+const uint16_t UT_BITS_NB = 0x25;
+const uint8_t UT_BITS_TAB[] = { 0xCD, 0x6B, 0xB2, 0x0E, 0x1B };
+
+const uint16_t UT_INPUT_BITS_ADDRESS = 0xC4;
+const uint16_t UT_INPUT_BITS_NB = 0x16;
+const uint8_t UT_INPUT_BITS_TAB[] = { 0xAC, 0xDB, 0x35 };
+
+const uint16_t UT_REGISTERS_ADDRESS = 0x6B;
+/* Raise a manual exception when this adress is used for the first byte */
+const uint16_t UT_REGISTERS_ADDRESS_SPECIAL = 0x6C;
+const uint16_t UT_REGISTERS_NB = 0x3;
+const uint16_t UT_REGISTERS_TAB[] = { 0x022B, 0x0001, 0x0064 };
+/* If the following value is used, a bad response is sent.
+   It's better to test with a lower value than
+   UT_REGISTERS_NB_POINTS to try to raise a segfault. */
+const uint16_t UT_REGISTERS_NB_SPECIAL = 0x2;
+
+const uint16_t UT_INPUT_REGISTERS_ADDRESS = 0x08;
+const uint16_t UT_INPUT_REGISTERS_NB = 0x1;
+const uint16_t UT_INPUT_REGISTERS_TAB[] = { 0x000A };
+
+const float UT_REAL = 916.540649;
+const uint32_t UT_IREAL = 0x4465229a;
+
+
+#define SERVER_ID  0
+
+/*============================================================================*/
+/* Funciones de usuario                                                       */
+/*============================================================================*/
+
+/*============================================================================*/
+/* Nombre    : CheckRPi2Test01                                                */
+/* Funcion   : Prueba Test01                                                  */
+/* Parametros: Ninguno                                                        */
+/* Salida    : [INT] Error de salida                                          */
+/* Version   : [00.00.00] Inicio = 12-01-2017 - Final = 12-01-2017  Fede Perez*/
+/* Comentario:                                                                */
+/*============================================================================*/
+
+int CheckRPi2Test01(void)
+{
+ int out = RPI2TEST01_NO_ERROR;
+ return out;
+
+}
+
+/*============================================================================*/
+/* Programa Principal                                                         */
+/*============================================================================*/
+/*============================================================================*/
+/* Nombre    : main                                                           */
+/* Funcion   : Programa principal de la aplicación                            */
+/* Parametros: [IN] [INT] argc - numero de argumentos                         */
+/*           : [IN] [PCHAR[]] argv - valor de argumentos                      */
+/* Salida    : [INT] Error producido                                          */
+/* Version   : [00.00.00] Inicio = 12-01-2017 - Final = 12-01-2017  Fede Perez*/
+/*============================================================================*/
+
+int main(int argc, char *argv[])
+{
+
+	int out = RPI2TEST01_ERROR;
+
+
+
+
+    int socket;
+    modbus_t *ctx;
+    modbus_mapping_t *mb_mapping;
+    int rc;
+    int i;
+    int use_backend;
+    uint8_t *query;
+    int header_length;
+
+    //If the port n° is specified
+    if (argc > 1) {
+    	//if is TCP
+        if (strcmp(argv[1], "tcp") == 0) {
+            use_backend = TCP;
+        }
+        //If is TCPPI
+        else if (strcmp(argv[1], "tcppi") == 0) {
+            use_backend = TCP_PI;
+        }
+        //If is RTU
+        else if (strcmp(argv[1], "rtu") == 0) {
+            use_backend = RTU;
+        }
+        //Else
+        else {
+            printf("Usage:\n  %s [tcp|tcppi|rtu] - Modbus server for unit testing\n\n", argv[0]);
+            return -1;
+        }
+    } else {
+        /* By default */
+        use_backend = TCP;
+    }
+
+
+
+    //If is TCP
+    if (use_backend == TCP) {
+    	//Add IP adress & n° port
+        ctx = modbus_new_tcp("127.0.0.1", 1502);
+      query = (uint8_t*) malloc(MODBUS_TCP_MAX_ADU_LENGTH);
+
+    //If is TCP PI
+    } else if (use_backend == TCP_PI) {
+    	//Add adress & n° port
+        ctx = modbus_new_tcp_pi("::0", "1502");
+       query = malloc(MODBUS_TCP_MAX_ADU_LENGTH);
+
+    //If is RTU
+    } else {
+        ctx = modbus_new_rtu("/dev/ttyUSB0", 115200, 'N', 8, 1);
+        modbus_set_slave(ctx, SERVER_ID);
+       query = malloc(MODBUS_RTU_MAX_ADU_LENGTH);
+    }
+
+    //Set header lenght
+    header_length = modbus_get_header_length(ctx);
+
+    //Set Debug
+    modbus_set_debug(ctx, true);
+
+
+    //Creation of new modbus mapping
+    mb_mapping = modbus_mapping_new(
+        UT_BITS_ADDRESS + UT_BITS_NB,
+        UT_INPUT_BITS_ADDRESS + UT_INPUT_BITS_NB,
+        UT_REGISTERS_ADDRESS + UT_REGISTERS_NB,
+        UT_INPUT_REGISTERS_ADDRESS + UT_INPUT_REGISTERS_NB);
+
+    //If error
+    if (mb_mapping == NULL) {
+        fprintf(stderr, "Failed to allocate the mapping: %s\n",
+                modbus_strerror(errno));
+        modbus_free(ctx);
+        return -1;
+    }
+
+    /* Examples from PI_MODBUS_300.pdf.
+       Only the read-only input values are assigned. */
+
+    /** INPUT STATUS **/
+    modbus_set_bits_from_bytes(mb_mapping->tab_input_bits,
+                               UT_INPUT_BITS_ADDRESS, UT_INPUT_BITS_NB,
+                               UT_INPUT_BITS_TAB);
+
+    /** INPUT REGISTERS **/
+    for (i=0; i < UT_INPUT_REGISTERS_NB; i++) {
+        mb_mapping->tab_input_registers[UT_INPUT_REGISTERS_ADDRESS+i] =
+            UT_INPUT_REGISTERS_TAB[i];;
+    }
+
+    //Creation of listen Socket
+    //If TCP
+    if (use_backend == TCP) {
+        socket = modbus_tcp_listen(ctx, 1);
+        modbus_tcp_accept(ctx, &socket);
+    //If TCP PI
+    } else if (use_backend == TCP_PI) {
+        socket = modbus_tcp_pi_listen(ctx, 1);
+        modbus_tcp_pi_accept(ctx, &socket);
+
+    //If RTU
+    } else {
+        rc = modbus_connect(ctx);
+        if (rc == -1) {
+            fprintf(stderr, "Unable to connect %s\n", modbus_strerror(errno));
+            modbus_free(ctx);
+            return -1;
+        }
+    }
+
+
+    // <=> While(1)
+    for (;;) {
+
+    	//Reception
+        rc = modbus_receive(ctx, query);
+        //Si connection error
+        if (rc == -1) {
+            /* Connection closed by the client or error */
+            break;
+        }
+
+
+        /* Read holding registers */
+        //If header length == 3
+        if (query[header_length] == 0x03) {
+
+            if (MODBUS_GET_INT16_FROM_INT8(query, header_length + 3)
+                == UT_REGISTERS_NB_SPECIAL) {
+                printf("Set an incorrect number of values\n");
+                MODBUS_SET_INT16_TO_INT8(query, header_length + 3,
+                                         UT_REGISTERS_NB_SPECIAL - 1);
+
+
+            } else if (MODBUS_GET_INT16_FROM_INT8(query, header_length + 1)
+                == UT_REGISTERS_ADDRESS_SPECIAL) {
+                printf("Reply to this special register address by an exception\n");
+                modbus_reply_exception(ctx, query,
+                                       MODBUS_EXCEPTION_SLAVE_OR_SERVER_BUSY);
+                continue;
+            }
+        }
+
+        //Modbus reply
+        rc = modbus_reply(ctx, query, rc, mb_mapping);
+        if (rc == -1) {
+            break;
+        }
+    }
+
+    //If exit the loop
+    printf("Quit the loop: %s\n", modbus_strerror(errno));
+
+    //If it was TCP -> close socket
+    if (use_backend == TCP) {
+        close(socket);
+    }
+
+    //Free modbus mapping
+    modbus_mapping_free(mb_mapping);
+    //Free query
+    free(query);
+    //Free modbus
+    modbus_free(ctx);
+
+
+ return out;
+}
+
+/*============================================================================*/
+/* Fin de fichero RPi2Test01.cpp                                              */
+/*============================================================================*/

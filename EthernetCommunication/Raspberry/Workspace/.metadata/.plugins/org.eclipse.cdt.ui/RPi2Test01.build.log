@@ -1,0 +1,32 @@
+10:14:16 **** Incremental Build of configuration Default for project RPi2Test01 ****
+make all 
+Building target: BIN/RPi2Test01.out
+./OBJ/RPi2Test01.cpp.o: In function `main':
+RPi2Test01.cpp:(.text+0xbc): undefined reference to `modbus_new_tcp'
+RPi2Test01.cpp:(.text+0xe8): undefined reference to `modbus_new_tcp_pi'
+RPi2Test01.cpp:(.text+0x112): undefined reference to `modbus_new_rtu'
+RPi2Test01.cpp:(.text+0x11e): undefined reference to `modbus_set_slave'
+RPi2Test01.cpp:(.text+0x130): undefined reference to `modbus_get_header_length'
+RPi2Test01.cpp:(.text+0x13c): undefined reference to `modbus_set_debug'
+RPi2Test01.cpp:(.text+0x148): undefined reference to `modbus_mapping_new'
+RPi2Test01.cpp:(.text+0x16a): undefined reference to `modbus_strerror'
+RPi2Test01.cpp:(.text+0x182): undefined reference to `modbus_free'
+RPi2Test01.cpp:(.text+0x19c): undefined reference to `modbus_set_bits_from_bytes'
+RPi2Test01.cpp:(.text+0x1cc): undefined reference to `modbus_tcp_listen'
+RPi2Test01.cpp:(.text+0x1dc): undefined reference to `modbus_tcp_accept'
+RPi2Test01.cpp:(.text+0x1ec): undefined reference to `modbus_tcp_pi_listen'
+RPi2Test01.cpp:(.text+0x1fc): undefined reference to `modbus_tcp_pi_accept'
+RPi2Test01.cpp:(.text+0x204): undefined reference to `modbus_connect'
+RPi2Test01.cpp:(.text+0x228): undefined reference to `modbus_strerror'
+RPi2Test01.cpp:(.text+0x240): undefined reference to `modbus_free'
+RPi2Test01.cpp:(.text+0x24e): undefined reference to `modbus_receive'
+RPi2Test01.cpp:(.text+0x2dc): undefined reference to `modbus_reply_exception'
+RPi2Test01.cpp:(.text+0x2ea): undefined reference to `modbus_reply'
+RPi2Test01.cpp:(.text+0x308): undefined reference to `modbus_strerror'
+RPi2Test01.cpp:(.text+0x32c): undefined reference to `modbus_mapping_free'
+RPi2Test01.cpp:(.text+0x338): undefined reference to `modbus_free'
+collect2.exe: error: ld returned 1 exit status
+make: *** [Makefile:234: BIN/RPi2Test01.out] Error 1
+
+10:14:17 Build Finished (took 485ms)
+

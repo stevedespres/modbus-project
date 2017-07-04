@@ -1,0 +1,328 @@
+/*============================================================================*/
+/* FICHERO     : ModbusTCPTest.cpp                                               */
+/* COMETIDO    : Programa Principal del test para prueba de programacion RPi2 */
+/* VERSIONES   : V1.00 - Inicio = 12-01-2017 - Final = 12-01-2017 - Fede Pérez*/
+/* COMENTARIOS : V1.00 - Versión inicial                                      */
+/*============================================================================*/
+/*============================================================================*/
+/* Ficheros de cabeceras                                                      */
+/*============================================================================*/
+
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <modbus.h>
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+#include "unit-test.h"
+
+enum {
+    TCP,
+    TCP_PI,
+    RTU
+};
+
+
+
+
+/*============================================================================*/
+/* Macros y definiciones                                                      */
+/*============================================================================*/
+
+#define RPI2TEST01_NO_ERROR        0
+#define RPI2TEST01_ERROR           -1
+
+
+#define LOOP             1
+#define ADDRESS_START    0
+#define ADDRESS_END     99
+
+
+
+/*============================================================================*/
+/* Funciones de usuario                                                       */
+/*============================================================================*/
+
+/*============================================================================*/
+/* Nombre    : CheckModbusTCPTest                                                */
+/* Funcion   : Prueba Test01                                                  */
+/* Parametros: Ninguno                                                        */
+/* Salida    : [INT] Error de salida                                          */
+/* Version   : [00.00.00] Inicio = 12-01-2017 - Final = 12-01-2017  Fede Perez*/
+/* Comentario:                                                                */
+/*============================================================================*/
+
+int CheckRPi2Test01(void)
+{
+ int out = RPI2TEST01_NO_ERROR;
+ return out;
+
+}
+
+
+uint16_t CalculAverage( uint16_t* tab, int n )
+{
+	uint16_t sum =0;
+	int i;
+	for(i=0;i<n;i++){ sum += tab[i];}
+
+	return sum/n;
+}
+
+/*============================================================================*/
+/* Programa Principal                                                         */
+/*============================================================================*/
+/*============================================================================*/
+/* Nombre    : main                                                           */
+/* Funcion   : Programa principal de la aplicación                            */
+/* Parametros: [IN] [INT] argc - numero de argumentos                         */
+/*           : [IN] [PCHAR[]] argv - valor de argumentos                      */
+/* Salida    : [INT] Error producido                                          */
+/* Version   : [00.00.00] Inicio = 12-01-2017 - Final = 12-01-2017  Fede Perez*/
+/*============================================================================*/
+
+
+
+int main(int argc, char *argv[])
+{
+
+
+
+	int out = RPI2TEST01_ERROR;
+
+
+	    uint16_t *tab_rp_registers;
+	    uint16_t *TAB_RP_REG;
+	    modbus_t *ctx;
+	    int i;
+	    uint8_t value;
+	    int nb_points;
+	    int rc, rg, n;
+	    float real;
+	    uint32_t ireal;
+
+	    struct timeval response_timeout;
+	    int use_backend;
+	    int nb_loop;
+	    int addr;
+
+	    bool tabFull = false;
+	    uint16_t average=0;
+	    n=0;
+
+	    //Config to TCP
+	    if (argc > 1) {
+
+	    	if (strcmp(argv[1], "tcp") == 0) {
+	            use_backend = TCP;
+	        } else {
+	        	fprintf(stderr, "NO TCP\n");
+	        }
+
+	    } else {
+	        /* By default */
+	        use_backend = TCP;
+	    }
+
+
+	    //Config backend
+	    if (use_backend == TCP) {
+	        ctx = modbus_new_tcp("192.168.1.119", 502);
+	    } else {
+	    	fprintf(stderr, "NO TCP\n");
+
+	    }
+
+
+	    if (ctx == NULL) {
+	        fprintf(stderr, "Unable to allocate libmodbus context\n");
+	        return -1;
+	    }
+
+
+	    modbus_set_debug(ctx, TRUE);
+	    modbus_set_error_recovery(ctx,MODBUS_ERROR_RECOVERY_LINK );
+	    modbus_set_error_recovery(ctx,MODBUS_ERROR_RECOVERY_PROTOCOL);
+
+	   /* modbus_set_error_recovery(ctx,
+	                              MODBUS_ERROR_RECOVERY_LINK |
+	                              MODBUS_ERROR_RECOVERY_PROTOCOL); */
+
+
+	    /*	tab_rq_registers = (uint16_t *) malloc(nb_points * sizeof(uint16_t));
+	    			memset(tab_rq_registers, 0, nb_points * sizeof(uint16_t));*/
+
+
+	    //Allocate and initialize the memory to store the values of registers
+	    TAB_RP_REG = (uint16_t *) malloc(10 * sizeof(uint16_t));
+	    memset(TAB_RP_REG, 0, 10 * sizeof(uint16_t));
+
+
+	    printf("** UNIT TESTING : Holding REGISTERS**\n");
+
+
+	    //Creating file to stock data
+	   	    		    FILE *file = fopen("dataModbus.csv", "ab+");
+	   	    		    char there_was_error = 0;
+	   	    		    char opened_in_read  = 1;
+	   	    		    if(file == NULL) //if file does not exist, create it
+	   	    		       {
+	   	    		           opened_in_read = 0;
+	   	    		           file = fopen("dataModbus.csv", "wb");
+	   	    		           if (file == NULL)
+	   	    		               there_was_error = 1;
+	   	    		       }
+	   	    		       if (there_was_error)
+	   	    		       {
+	   	    		           printf("Disc full or no permission\n");
+	   	    		           return EXIT_FAILURE;
+	   	    		       }
+	   	    		       if (opened_in_read)
+	   	    		           printf("The file is opened in read mode."
+	   	    		                  " Let's read some cached data\n");
+	   	    		       else
+	   	    		           printf("The file is opened in write mode."
+	   	    		                  " Let's do some processing and cache the results\n");
+
+
+
+	   	    		       fclose(file);
+
+
+
+	    /** Holding REGISTERS **/
+	    while(1){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			//Connection
+		   if (modbus_connect(ctx) == -1) {
+				fprintf(stderr, "Connection failed: %s\n",modbus_strerror(errno));
+				modbus_free(ctx);
+				return -1;
+			}
+
+			/* Allocate and initialize the memory to store the registers */
+			nb_points = (UT_REGISTERS_NB > UT_INPUT_REGISTERS_NB) ?
+				UT_REGISTERS_NB : UT_INPUT_REGISTERS_NB;
+
+			//Tab register
+			tab_rp_registers = (uint16_t *) malloc(nb_points * sizeof(uint16_t));
+			memset(tab_rp_registers, 0, nb_points * sizeof(uint16_t));
+
+			//Read input registers
+			rc = modbus_read_registers(ctx, 200,UT_INPUT_REGISTERS_NB,
+	                                     tab_rp_registers);
+
+			printf("Modbus_read_input_registers: ");
+
+			if (rc != UT_INPUT_REGISTERS_NB) {
+				printf("FAILED (nb points %d)\n", rc);
+				goto close;
+			}
+
+
+			//Values traitment
+			for (i=0; i < UT_INPUT_REGISTERS_NB; i++) {
+
+				//If tab of values is full
+				if(n>9){
+					tabFull =true;
+					n=0;
+				}
+
+				//Keep the 10 last values of registers in a tab
+				TAB_RP_REG[n]= tab_rp_registers[i];
+				n++;
+				//write data on csv file
+
+			//	fprintf(file,"%d\n;",tab_rp_registers[i] );
+
+
+				//if tab is full => Calcul average of the 10 last values
+				if( tabFull ){
+					average = CalculAverage(TAB_RP_REG, 10);
+				//if tab is not full => Calcul average with the values already obtained
+				} else{
+					average = CalculAverage(TAB_RP_REG, (n));
+				}
+
+
+				//Print
+				printf("value = %d\n",tab_rp_registers[i]);
+				printf("average = %d\n",average);
+
+			}
+
+			printf("OK\n");
+
+
+
+
+		    /* Close the connection */
+			modbus_close(ctx);
+
+			//New connection
+			 ctx = modbus_new_tcp("192.168.1.119", 502);
+
+
+		   if (modbus_connect(ctx) == -1) {
+
+				fprintf(stderr, "Connection failed: %s\n",modbus_strerror(errno));
+				modbus_free(ctx);
+				return -1;
+			}
+		   	   //Write the average in the register
+			rc = modbus_write_register(ctx, 400,average);
+
+
+
+			sleep(1);
+
+
+
+		    /* Close the connection */
+			modbus_close(ctx);
+		//	fclose(file);
+
+
+	    }
+
+
+
+	close:
+	    /* Free the memory */
+
+	    free(tab_rp_registers);
+	    free(TAB_RP_REG);
+
+	    /* Close the connection */
+	    modbus_close(ctx);
+	    modbus_free(ctx);
+
+
+
+ return out;
+
+}
+
+/*============================================================================*/
+/* Fin de fichero ModbusTCPTest.cpp                                              */
+/*============================================================================*/

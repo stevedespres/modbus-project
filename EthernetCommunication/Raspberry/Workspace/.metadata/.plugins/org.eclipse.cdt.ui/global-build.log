@@ -1,0 +1,619 @@
+12:18:46 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+12:18:53 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+12:39:11 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'uint16_t CalculAverage10LastValues(uint16_t*)':
+ModbusTCPTest/ModbusTCPTest.cpp:74:2: error: expected ';' before '}' token
+  }
+  ^
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:229:11: error: 'cls' was not declared in this scope
+    system(cls);
+           ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:39:22 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'uint16_t CalculAverage10LastValues(uint16_t*)':
+ModbusTCPTest/ModbusTCPTest.cpp:74:2: error: expected ';' before '}' token
+  }
+  ^
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:229:11: error: 'cls' was not declared in this scope
+    system(cls);
+           ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:40:58 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:41:12 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:41:37 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+12:42:43 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:186:9: error: 'tabFull' was not declared in this scope
+      if(tabFull){ average = CalculAverage10LastValues(TAB_RP_REG); }
+         ^
+ModbusTCPTest/ModbusTCPTest.cpp:186:19: error: 'average' was not declared in this scope
+      if(tabFull){ average = CalculAverage10LastValues(TAB_RP_REG); }
+                   ^
+ModbusTCPTest/ModbusTCPTest.cpp:218:29: error: 'average' was not declared in this scope
+     printf("average = %d\n",average);
+                             ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:42:50 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:218:29: error: 'average' was not declared in this scope
+     printf("average = %d\n",average);
+                             ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:42:59 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:43:12 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:44:08 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:44:22 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:44:40 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:45:07 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:45:35 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:48:13 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:49:06 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:53:31 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:55:07 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+12:55:27 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:02:02 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:05:09 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:09:05 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:10:07 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+13:14:17 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+13:14:57 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:15:18 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+13:16:01 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:19:49 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+13:20:35 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:20:58 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+15:59:45 **** Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+17:06:19 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+17:13:56 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+17:14:18 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+17:16:32 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+10:56:03 **** Build of configuration Default for project ModbusTCPTest ****
+make all 
+11:05:13 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+11:44:59 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+13:11:05 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:16:07 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+14:35:28 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+14:36:51 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+14:38:28 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+14:39:28 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+14:42:45 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+14:43:43 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+15:02:18 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+15:03:18 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+15:03:27 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+15:04:27 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+15:52:10 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+16:36:06 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+10:42:38 **** Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+10:46:49 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+10:50:26 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+10:50:48 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+10:51:36 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+10:53:13 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+10:54:42 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+10:55:23 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+10:58:05 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+10:59:08 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+10:59:18 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+11:33:50 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+11:35:21 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+11:48:35 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+11:52:07 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+11:52:36 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+12:08:28 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:302:13: error: 'file' was not declared in this scope
+      fclose(file);
+             ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:11:21 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:12:20 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+12:12:37 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:12:54 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:294:11: error: 'file' was not declared in this scope
+    fclose(file);
+           ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:13:07 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:13:59 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:14:25 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:14:46 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:15:07 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:16:27 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:16:42 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:17:08 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:17:22 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:19:13 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:173:45: error: invalid conversion from 'void*' to 'char*' [-fpermissive]
+      char *date = malloc(sizeof(*date) * 24 );
+                                             ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:19:42 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:173:46: error: invalid conversion from 'void*' to 'char*' [-fpermissive]
+      char *date = malloc(sizeof(*date) * 256 );
+                                              ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:19:54 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:173:45: error: invalid conversion from 'void*' to 'char*' [-fpermissive]
+      char *date = malloc(sizeof(char) * 256 );
+                                             ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:19:59 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:173:45: error: invalid conversion from 'void*' to 'char*' [-fpermissive]
+      char *date = malloc(sizeof(char) * 256 );
+                                             ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:20:50 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:173:46: error: invalid conversion from 'void*' to 'char*' [-fpermissive]
+      char *date = malloc(sizeof(*date) * 256 );
+                                              ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:21:46 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:22:00 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:24:36 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:26:36 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:27:50 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:28:32 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:33:15 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:33:44 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:34:42 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:188:46: error: invalid operands of types 'const char [18]' and 'char*' to binary 'operator+'
+       FILE *file = fopen("/DataModbusFiles/"+fileName, "ab+");
+                                              ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+12:35:34 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:36:49 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:38:08 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:177:23: warning: unknown escape sequence: '\d'
+      strcpy(fileName, "\dataModbus_");
+                       ^
+Building target: BIN/ModbusTCPTest.out
+12:38:19 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:39:08 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:177:23: warning: unknown escape sequence: '\d'
+      strcpy(fileName, "ModbusDataFiles\dataModbus_");
+                       ^
+Building target: BIN/ModbusTCPTest.out
+12:39:38 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:40:13 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:41:31 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:42:05 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:42:22 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:42:54 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:43:36 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:43:52 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:44:16 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:45:04 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:45:59 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:46:41 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:52:51 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:53:00 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+12:54:10 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:55:44 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:58:42 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+12:59:06 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:00:02 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+13:00:17 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+13:00:52 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+13:03:04 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:190:45: error: invalid operands of types 'const char [17]' and 'char*' to binary 'operator+'
+       FILE *file = fopen("ModbusDataFiles/"+fileName, "ab+");
+                                             ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+13:03:13 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:190:45: error: request for member 'fileName' in '"ModbusDataFiles/"', which is of non-class type 'const char [17]'
+       FILE *file = fopen("ModbusDataFiles/".fileName, "ab+");
+                                             ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+13:04:38 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp:191:41: warning: missing terminating " character
+       FILE *file = fopen("fileName, "ab+");
+                                         ^
+ModbusTCPTest/ModbusTCPTest.cpp:191:7: error: missing terminating " character
+       FILE *file = fopen("fileName, "ab+");
+       ^
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:191:38: error: expected ')' before 'ab'
+       FILE *file = fopen("fileName, "ab+");
+                                      ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+13:09:00 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:09:03 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+13:09:52 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:10:19 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:10:59 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:11:25 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:11:47 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:199:14: error: no match for 'operator=' (operand types are 'FILE {aka _IO_FILE}' and 'FILE* {aka _IO_FILE*}')
+        *file = fopen(fileName, "ab+");
+              ^
+ModbusTCPTest/ModbusTCPTest.cpp:199:14: note: candidate is:
+In file included from c:\linaro\gcc-linaro-arm-linux-gnueabihf-4.9-2014.09\arm-linux-gnueabihf\libc\usr\include\stdio.h:74:0,
+                 from ModbusTCPTest/ModbusTCPTest.cpp:11:
+c:\linaro\gcc-linaro-arm-linux-gnueabihf-4.9-2014.09\arm-linux-gnueabihf\libc\usr\include\libio.h:245:8: note: _IO_FILE& _IO_FILE::operator=(const _IO_FILE&)
+ struct _IO_FILE {
+        ^
+c:\linaro\gcc-linaro-arm-linux-gnueabihf-4.9-2014.09\arm-linux-gnueabihf\libc\usr\include\libio.h:245:8: note:   no known conversion for argument 1 from 'FILE* {aka _IO_FILE*}' to 'const _IO_FILE&'
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+13:12:21 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+ModbusTCPTest/ModbusTCPTest.cpp: In function 'int main(int, char**)':
+ModbusTCPTest/ModbusTCPTest.cpp:198:18: error: invalid conversion from 'FILE* {aka _IO_FILE*}' to 'int' [-fpermissive]
+        close(file);
+                  ^
+In file included from ModbusTCPTest/ModbusTCPTest.cpp:12:0:
+c:\linaro\gcc-linaro-arm-linux-gnueabihf-4.9-2014.09\arm-linux-gnueabihf\libc\usr\include\unistd.h:353:12: note: initializing argument 1 of 'int close(int)'
+ extern int close (int __fd);
+            ^
+make: *** [Makefile:273: OBJ/ModbusTCPTest.cpp.o] Error 1
+13:12:39 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:13:20 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:14:13 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:15:04 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+13:15:26 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:15:53 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:16:06 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out
+13:21:32 **** Incremental Build of configuration Default for project ModbusTCPTest ****
+make all 
+Building file: ModbusTCPTest/ModbusTCPTest.cpp
+Building target: BIN/ModbusTCPTest.out

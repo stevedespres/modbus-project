@@ -1,0 +1,233 @@
+/*============================================================================*/
+/* FICHERO     : ModbusTCPTest.cpp                                               */
+/* COMETIDO    : Programa Principal del test para prueba de programacion RPi2 */
+/* VERSIONES   : V1.00 - Inicio = 12-01-2017 - Final = 12-01-2017 - Fede Pérez*/
+/* COMENTARIOS : V1.00 - Versión inicial                                      */
+/*============================================================================*/
+/*============================================================================*/
+/* Ficheros de cabeceras                                                      */
+/*============================================================================*/
+
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <modbus.h>
+
+
+#include "unit-test.h"
+
+enum {
+    TCP,
+    TCP_PI,
+    RTU
+};
+
+
+
+
+/*============================================================================*/
+/* Macros y definiciones                                                      */
+/*============================================================================*/
+
+#define RPI2TEST01_NO_ERROR        0
+#define RPI2TEST01_ERROR           -1
+
+
+#define LOOP             1
+#define ADDRESS_START    0
+#define ADDRESS_END     99
+
+
+
+/*============================================================================*/
+/* Funciones de usuario                                                       */
+/*============================================================================*/
+
+/*============================================================================*/
+/* Nombre    : CheckModbusTCPTest                                                */
+/* Funcion   : Prueba Test01                                                  */
+/* Parametros: Ninguno                                                        */
+/* Salida    : [INT] Error de salida                                          */
+/* Version   : [00.00.00] Inicio = 12-01-2017 - Final = 12-01-2017  Fede Perez*/
+/* Comentario:                                                                */
+/*============================================================================*/
+
+int CheckRPi2Test01(void)
+{
+ int out = RPI2TEST01_NO_ERROR;
+ return out;
+
+}
+
+/*============================================================================*/
+/* Programa Principal                                                         */
+/*============================================================================*/
+/*============================================================================*/
+/* Nombre    : main                                                           */
+/* Funcion   : Programa principal de la aplicación                            */
+/* Parametros: [IN] [INT] argc - numero de argumentos                         */
+/*           : [IN] [PCHAR[]] argv - valor de argumentos                      */
+/* Salida    : [INT] Error producido                                          */
+/* Version   : [00.00.00] Inicio = 12-01-2017 - Final = 12-01-2017  Fede Perez*/
+/*============================================================================*/
+
+int main(int argc, char *argv[])
+{
+
+
+
+
+
+	int out = RPI2TEST01_ERROR;
+
+
+	    uint16_t *tab_rp_registers;
+	    uint16_t *tab_rq_registers;
+	    modbus_t *ctx;
+	    int i;
+	    uint8_t value;
+	    int nb_points;
+	    int rc;
+	    float real;
+	    uint32_t ireal;
+	    struct timeval old_response_timeout;
+	    struct timeval response_timeout;
+	    int use_backend;
+	    int nb_loop;
+	    int addr;
+
+	    //Config to TCP
+	    if (argc > 1) {
+
+	    	if (strcmp(argv[1], "tcp") == 0) {
+	            use_backend = TCP;
+	        } else {
+	        	fprintf(stderr, "NO TCP\n");
+	        }
+
+	    } else {
+	        /* By default */
+	        use_backend = TCP;
+	    }
+
+
+
+	    if (use_backend == TCP) {
+	        ctx = modbus_new_tcp("192.168.0.146", 502);
+	    } else {
+	    	fprintf(stderr, "NO TCP\n");
+
+	    }
+
+
+	    if (ctx == NULL) {
+	        fprintf(stderr, "Unable to allocate libmodbus context\n");
+	        return -1;
+	    }
+
+
+	    modbus_set_debug(ctx, TRUE);
+	    modbus_set_error_recovery(ctx,MODBUS_ERROR_RECOVERY_LINK );
+	    modbus_set_error_recovery(ctx,MODBUS_ERROR_RECOVERY_PROTOCOL);
+
+	   /* modbus_set_error_recovery(ctx,
+	                              MODBUS_ERROR_RECOVERY_LINK |
+	                              MODBUS_ERROR_RECOVERY_PROTOCOL); */
+
+	    //Connect
+	   if (modbus_connect(ctx) == -1) {
+	        fprintf(stderr, "Connection failed: %s\n",
+	                modbus_strerror(errno));
+	        modbus_free(ctx);
+	        return -1;
+	    }
+
+
+
+	    /* Allocate and initialize the memory to store the registers */
+	    nb_points = (UT_REGISTERS_NB > UT_INPUT_REGISTERS_NB) ?
+	        UT_REGISTERS_NB : UT_INPUT_REGISTERS_NB;
+
+	    tab_rq_registers = (uint16_t *) malloc(nb_points * sizeof(uint16_t));
+	    memset(tab_rq_registers, 0, nb_points * sizeof(uint16_t));
+
+	    tab_rp_registers = (uint16_t *) malloc(nb_points * sizeof(uint16_t));
+	    memset(tab_rp_registers, 0, nb_points * sizeof(uint16_t));
+
+	    printf("** UNIT TESTING : INPUT REGISTERS**\n");
+
+
+
+	    /** INPUT REGISTERS **/
+
+	    //Read input registers
+    rc = modbus_read_input_registers(ctx, UT_INPUT_REGISTERS_ADDRESS,UT_INPUT_REGISTERS_NB,
+	                                     tab_rp_registers);
+	    printf("Modbus_read_input_registers: ");
+	    if (rc != UT_INPUT_REGISTERS_NB) {
+	        printf("FAILED (nb points %d)\n", rc);
+	        goto close;
+	    }
+	    for (i=0; i < UT_INPUT_REGISTERS_NB; i++) {
+	   	 printf("value = %d\n",tab_rp_registers[i]);
+
+	  /*  if (tab_rp_registers[i] != UT_INPUT_REGISTERS_TAB[i]) {
+	            printf("FAILED (%0X != %0X)\n",
+	                   tab_rp_registers[i], UT_INPUT_REGISTERS_TAB[i]);
+	            goto close;
+	        }
+	  */  }
+
+	    printf("OK\n");
+
+	    	while(1){}
+
+
+	  	    rc = modbus_read_input_registers(ctx, 101,UT_INPUT_REGISTERS_NB,
+	  	                                     tab_rp_registers);
+	  	    printf("Modbus_read_input_registers: ");
+	  	    if (rc != UT_INPUT_REGISTERS_NB) {
+	  	        printf("FAILED (nb points %d)\n", rc);
+	  	        goto close;
+	  	    }
+	  	    for (i=0; i < UT_INPUT_REGISTERS_NB; i++) {
+	  	   	 printf("value = %d\n",tab_rp_registers[i]);
+
+	  	  /*  if (tab_rp_registers[i] != UT_INPUT_REGISTERS_TAB[i]) {
+	  	            printf("FAILED (%0X != %0X)\n",
+	  	                   tab_rp_registers[i], UT_INPUT_REGISTERS_TAB[i]);
+	  	            goto close;
+	  	        }
+	  	  */ }
+
+
+
+		    printf("OK\n");
+
+
+
+
+
+
+
+
+	close:
+	    /* Free the memory */
+
+	    free(tab_rp_registers);
+
+	    /* Close the connection */
+	    modbus_close(ctx);
+	    modbus_free(ctx);
+
+
+
+ return out;
+
+}
+
+/*============================================================================*/
+/* Fin de fichero ModbusTCPTest.cpp                                              */
+/*============================================================================*/
